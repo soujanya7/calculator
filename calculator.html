@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Assessment</title>
+        <style>
+
+            form{
+                display:grid;
+                grid-template-columns:1fr 1fr 1fr 1fr;
+                margin:5% 35%;
+                height: 90%;
+
+            }
+            #box1{
+                margin-top: 0px;
+                display: grid;
+                border:1px black solid;
+                justify-content: center;
+                align-items: center;
+                padding:20% 20%;
+                font-size: 40px;
+                font-style:bold;
+                font-family:arial;
+                
+            }
+            #box2{
+                display:grid;
+                border:1px black solid;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 1;
+                grid-column-end: 5;
+                font-size:40px;
+
+            }
+            #one{
+                border:none;
+                font-size: 40px;
+                font-style:bold;
+                font-family:arial;
+            }
+            #one:hover{
+                border:none;
+            }
+            .two{
+                background-color: rgb(243, 234, 234);
+            }
+            .three{
+                background-color: rgb(77, 65, 65);
+                color:white;
+            }
+            input[type=text]{
+                text-align:right;
+                padding:30px;
+                
+            }
+
+            input[type=reset]{
+                border:none;
+                text-decoration-line:none;
+
+
+            }
+
+
+        </style>
+                <script>
+                        function change(n)
+                        {
+                            if(n>0)
+                            {
+                                n = -n;
+                            }
+                            else
+                            {
+                                n=n*(-1);
+                            }
+                            return n;
+                        }
+                    </script>
+    </head>
+    <body>
+        <div class="container">
+            <form name="cal">
+                <input id ="box2" 50%" type="text" name="display" placeholder="0" readonly>
+            <div id="box1" class="two" style="position:relative"><input id="one" value="C" type="reset" onclick="cal.display.value +=''"> </div>
+            <div id="box1" class="two button"   onclick="cal.display.value =change(cal.display.value)">+/-</div>
+            <div id="box1" class="two button mathbutton" onclick="cal.display.value +='%'">%</div>
+            <div id="box1" class="button mathbutton three"  onclick="cal.display.value +='/'">&#247</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='7'">7</div>
+            <div id="box1" class="button" onclick="cal.display.value +='8'">8</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='9'">9</div>
+            <div id="box1" class="button mathbutton three"  onclick="cal.display.value +='*'">x</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='4'">4</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='5'">5</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='6'">6</div>
+            <div id="box1" class="button mathbutton three "  onclick="cal.display.value +='-'">-</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='1'">1</div>
+            <div id="box1" class="button" onclick="cal.display.value +='2'">2</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='3'">3</div>
+            <div id="box1" class="button mathbutton three " onclick="cal.display.value +='+'">+</div>
+            <div id="box1" class="button"  onclick="cal.display.value +='0'">0</div>
+            <div id="box1" class="button" onclick="cal.display.value +=''"></div>
+            <div id="box1" class="button"  onclick="cal.display.value +='.'">.</div>
+            <div id="box1" class="button" style="background-color: yellow; color:white"  onclick="cal.display.value = eval(cal.display.value)">=</div>
+        </div>
+    </form>
+
+    </body>
+</html>
